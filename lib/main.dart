@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patra/constants.dart';
+import 'package:patra/routes.dart';
 import 'package:patra/screens/home_screen.dart';
 import 'package:patra/widgets/navbar.dart';
 import 'screens/category_screen.dart';
@@ -33,6 +34,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: Constants.theme1,
       title: 'Material App',
+      routes: Routes.routes,
       home: Scaffold(
         drawer: const NavDrawer(),
         appBar: const NavBar(),
