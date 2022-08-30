@@ -15,10 +15,16 @@ class CategoryCircle extends StatelessWidget {
     return Column(
       children: [
         CircleAvatar(
-          minRadius: 30,
+          minRadius: 25,
           backgroundImage: NetworkImage(image!),
         ),
-        Text(categoryName!)
+        Container(
+          margin: const EdgeInsets.only(top: 10),
+          child: Text(
+            categoryName!,
+            style: TextStyle(fontSize: Constants.body5),
+          ),
+        )
       ],
     );
   }

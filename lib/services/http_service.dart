@@ -35,11 +35,11 @@ Future<RequestResult> http_post(
   }
 }
 
-Future<RequestResult> http_get(String route, headers) async {
+Future<RequestResult> http_get(String route) async {
   var url = Uri.parse("$PROTOCOL://$DOMAIN/$route");
   print(url);
 
-  final result = await http.get(url,headers: headers);
+  final result = await http.get(url);
 
   if (result.statusCode == 200) {
     return RequestResult(true, json.decode(result.body));

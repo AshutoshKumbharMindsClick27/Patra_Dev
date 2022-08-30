@@ -20,7 +20,7 @@ class _CategorySliderState extends State<CategorySlider> {
 
   handleFetchCategories() async {
     var data = await CategoryService.fetchCategories();
-    var defaultCategory = data.data['children_data'][0]['children_data'];
+    var defaultCategory = data.data['children_data'];
     for (var element in defaultCategory) {
       categories.add(Category(
           id: element['id'],
