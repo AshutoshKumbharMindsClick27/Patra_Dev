@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:patra/constants.dart';
+import 'package:patra/config/constants.dart';
+import 'package:patra/config/themes.dart';
 import 'package:patra/routes.dart';
 import 'package:patra/screens/home_screen.dart';
 import 'package:patra/widgets/navbar.dart';
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: Constants.theme1,
+      theme: Themes.theme1,
       title: 'Material App',
       routes: Routes.routes,
       home: Scaffold(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../config/constants.dart';
 import 'nav_drawer.dart';
 
 class NavBar extends StatelessWidget implements PreferredSizeWidget {

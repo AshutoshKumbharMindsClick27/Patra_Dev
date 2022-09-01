@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:patra/constants.dart';
+import 'package:patra/config/constants.dart';
 
 class CategoryCircle extends StatelessWidget {
   final String? image;
