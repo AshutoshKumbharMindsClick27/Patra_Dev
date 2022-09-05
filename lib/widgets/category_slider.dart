@@ -1,36 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:patra/models/category.dart';
+import 'package:patra/screens/category_details.dart';
 import 'package:patra/services/category_service.dart';
 import 'package:patra/widgets/category_circle.dart';
 
 class CategorySlider extends StatefulWidget {
-  const CategorySlider({Key? key}) : super(key: key);
+  final categories;
+  const CategorySlider({Key? key, this.categories}) : super(key: key);
 
   @override
   State<CategorySlider> createState() => _CategorySliderState();
 }
 
 class _CategorySliderState extends State<CategorySlider> {
-  var categories = [];
-  @override
-  void initState() {
-    handleFetchCategories();
-    super.initState();
-  }
-
-  handleFetchCategories() async {
-    var data = await CategoryService.fetchCategories();
-    var defaultCategory = data.data['children_data'];
-    for (var element in defaultCategory) {
-      categories.add(Category(
-          id: element['id'],
-          title: element['name'],
-          imgUrl:
-              "https://images-eu.ssl-images-amazon.com/images/G/31/img19/2020/PC/Mobile._SY232_CB431401553_.jpg"));
-    }
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -44,12 +26,19 @@ class _CategorySliderState extends State<CategorySlider> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List.from(
-                categories.map(
+                widget.categories.map(
                   (category) => Container(
                     margin: const EdgeInsets.only(left: 10),
-                    child: CategoryCircle(
-                      image: category.imgUrl,
-                      categoryName: category.title,
+                    child: InkWell(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => CategoryDetails(
+                                categoryTitle: category.title,
+                                subCategories: category.childrenData,
+                              ))),
+                      child: CategoryCircle(
+                        image: category.imgUrl,
+                        categoryName: category.title,
+                      ),
                     ),
                   ),
                 ),
