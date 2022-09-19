@@ -3,6 +3,8 @@ import 'package:patra/config/extensions/color_extension.dart';
 
 class Constants {
   static String brandName = "Patra";
+  static String apiDomain = "http://34.71.175.122/patra/pub/";
+
   static double heading1 = 32;
   static double heading2 = 24;
   static double heading3 = 21;

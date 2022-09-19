@@ -51,7 +51,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
               margin: const EdgeInsets.only(left: 15),
               child: Text(widget.categoryTitle),
             ),
-            (widget.subCategories!.isNotEmpty)
+            (widget.subCategories != null && widget.subCategories!.isNotEmpty)
                 ? CategorySlider(
                     categories: categories,
                   )

@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: Themes.theme1,
       title: 'Material App',
-      routes: Routes.routes,
+      routes: Routes.routes, 
       home: Scaffold(
         drawer: const NavDrawer(),
         appBar: const NavBar(),
